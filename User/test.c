@@ -584,7 +584,7 @@ void Setup_Process(void)
 							break;
 						case 7:
                             Jk516save.Set_Data.Range_Set=1;
-                            if(Jk516save.Set_Data.Range<3)
+                            if(Jk516save.Set_Data.Range<2)
                                 Jk516save.Set_Data.Range++;
                             else
                                 Jk516save.Set_Data.Range=0;
@@ -615,7 +615,7 @@ void Setup_Process(void)
                             if(Jk516save.Set_Data.Range)
 							Jk516save.Set_Data.Range--;
                             else
-                                Jk516save.Set_Data.Range=3;
+                                Jk516save.Set_Data.Range=2;
                                 
                             Range=Jk516save.Set_Data.Range;
 						break;
@@ -1178,7 +1178,7 @@ void Test_Process(void)
                         test_start=0;
                         Test_Value_V=V_Datacov(V_ad ,V_Range);//把数据的小数点和单位 和极性都加上
                         Test_Value=Datacov(I_ad,Range);
-                        if((Test_Value.uint == 1 && Test_Value.res > 33000 && Test_Value.dot == 3) || (Test_Value.uint == 1 && Test_Value.dot == 2) || Test_Value.uint > 1 || (Test_Value_V.dot == 3 && Test_Value_V.res > 60000))
+                        if((Test_Value.uint == 1 && Test_Value.res > 3300 && Test_Value.dot == 4) || (Test_Value.uint == 1 && Test_Value.dot == 2) || Test_Value.uint > 1 || (Test_Value_V.dot == 4 && Test_Value_V.res > 90000) || Test_Value_V.dot < 4)
 						{
 							vropen = 1;
 							open_flag=1;
@@ -1572,7 +1572,7 @@ void Test_Process(void)
 							   
 								case 4:
 									//Jk516save.Set_Data.Range=Jk516save.Set_Data.Range>0? Jk516save.Set_Data.Range--:RANGE_MAX;
-									if(Range>=3)
+									if(Range>=2)
 										Range=0;
 									else
 										Range++;

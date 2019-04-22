@@ -363,7 +363,7 @@ const uint8_t BiasButton_Tip[][7+1]=  //频率选择时候的下面的提示符号
 
 const uint8_t Sys_Sys[][20+1]=
 {
-	{"仪器型号  JK2520B+"},
+	{"仪器型号  18650"},
 	{"软件版本  Ver:1.0"},
 	{"硬件版本  Ver:1.1"},
 	{"仪器编号"},
@@ -374,7 +374,7 @@ const uint8_t Sys_Sys[][20+1]=
 };
 const uint8_t Sys_Sys_E[][20+1]=
 {
-	{"INST MODEL  JK2520B+"},
+	{"INST MODEL  18650"},
 	{"SOFT VER   Ver:1.0"},
 	{"HARD VER   Ver:1.1"},
 	{"SERIALNO"},
@@ -389,10 +389,10 @@ const uint8_t Range_Disp_Test[][7][11+1]=
         {"AUTO 10mΩ"},
         {"AUTO100mΩ"},
         {"AUTO   1Ω"},
-        {"AUTO  10Ω"},
-        {"AUTO  10Ω"},
-        {"AUTO  10Ω"},
-        {"AUTO  10Ω"},
+        {"AUTO   1Ω"},
+        {"AUTO   1Ω"},
+        {"AUTO   1Ω"},
+        {"AUTO   1Ω"},
        
     },
     {
@@ -4701,11 +4701,11 @@ Sort_TypeDef Time_Set_Cov(Sort_TypeDef *Time)
 //		value*=(float)1e10;
         
 	value/=pow(10,Time->Dot);
-	if(value>(float)33e7)
+	if(value>(float)33e5)
 	{
 		//value=3e10;
-		Time->Num=33000;
-		Time->Dot=3;
+		Time->Num=3300;
+		Time->Dot=4;
 		Time->Unit=1;
 		
 	}
@@ -4734,20 +4734,21 @@ Sort_TypeDef Time_Set_Cov(Sort_TypeDef *Time)
 //	
 //	
 //	}
-	else if(value>=(float)3e7)
-	{
-		Time->Num=value/(float)10000;
-		Time->Dot=3;
-		Time->Unit=1;
-	
-	}else if(value>=(float)3e6)
-	{
-		Time->Num=value/(float)1000;
-		Time->Dot=4;
-		Time->Unit=1;
-	
-	
-	}else if(value>=(float)3e5)
+//	else if(value>=(float)3e7)
+//	{
+//		Time->Num=value/(float)10000;
+//		Time->Dot=3;
+//		Time->Unit=1;
+//	
+//	}else if(value>=(float)3e6)
+//	{
+//		Time->Num=value/(float)1000;
+//		Time->Dot=4;
+//		Time->Unit=1;
+//	
+//	
+//	}
+	else if(value>=(float)3e5)
 	{
 		Time->Num=value/(float)100;
 		Time->Dot=2;
@@ -4805,10 +4806,10 @@ Sort_TypeDef Input_Set_Cov(Sort_TypeDef *Input_Ref)//
 //	}
 	value=(float)Input_Ref->Num*1000000;
 	value/=(pow(10,7-Input_Ref->Dot));
-	if(value>6000000/*12000000*/)
+	if(value>900000/*6000000*//*12000000*/)
 	{
 //		value=12000000;
-		value=6000000;
+		value=900000;
 		
 	}
 	if(value>=(float)1e7)
