@@ -152,7 +152,24 @@
           <Name></Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint/>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>4694</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134252984</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>F:\2520BP\Project\User\user.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Template\../../User/user.c\4694</Expression>
+        </Bp>
+      </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -293,6 +310,21 @@
           <count>27</count>
           <WinNumber>1</WinNumber>
           <ItemText>Jk516save.Set_Data.High_Res,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>28</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Time,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>29</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Jk516save.Set_Data.Res_low,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>30</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Sort_num1,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
