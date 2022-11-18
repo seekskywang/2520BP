@@ -1227,7 +1227,7 @@ void Test_Process(void)
                         test_start=0;
                         Test_Value_V=V_Datacov(V_ad ,V_Range);//把数据的小数点和单位 和极性都加上
                         Test_Value=Datacov(I_ad,Range);
-                        if((Test_Value.uint == 1 && Test_Value.res > 3300 && Test_Value.dot == 4) || (Test_Value.uint == 1 && Test_Value.dot == 2) || Test_Value.uint > 1 || (Test_Value_V.dot == 4 && Test_Value_V.res > 90000) || Test_Value_V.dot < 4)
+                        if((Test_Value.uint == 1 && Test_Value.res > 3300 && Test_Value.dot == 4) || (Test_Value.uint == 1 && Test_Value.dot == 2) || Test_Value.uint > 1 || (Test_Value_V.dot == 4 && Test_Value_V.res > 20000) || Test_Value_V.dot < 4)
 						{
 							vropen = 1;
 							open_flag=1;
